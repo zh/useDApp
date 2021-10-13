@@ -20,8 +20,18 @@ export const DEFAULT_CONFIG: FullConfig = {
     ChainId.ThetaTestnet,
     ChainId.Harmony,
     ChainId.Moonriver,
+    ChainId.Moonbase,
     ChainId.Palm,
     ChainId.Fantom,
+    ChainId.FantomTestnet,
+    ChainId.LocalAvalanche,
+    ChainId.AvalancheFuji,
+    ChainId.AvalancheMainnet,
+    ChainId.TomoTestnet,
+    ChainId.TomoMainnet,
+    ChainId.SmartBchTestnet,
+    ChainId.SmartBchMainnet,
+
   ],
   notifications: {
     checkInterval: 500,

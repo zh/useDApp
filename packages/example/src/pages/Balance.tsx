@@ -1,6 +1,6 @@
 import React from 'react'
 import { formatEther } from '@ethersproject/units'
-import { useEtherBalance, useEthers } from '@usedapp/core'
+import { ChainId, getCoinName, getChainName, useEtherBalance, useEthers } from '@usedapp/core'
 import { Container, ContentBlock, ContentRow, MainContent, Section, SectionRow } from '../components/base/base'
 import { Label } from '../typography/Label'
 import { TextInline } from '../typography/Text'
@@ -8,12 +8,11 @@ import { Title } from '../typography/Title'
 
 import { AccountButton } from '../components/account/AccountButton'
 
-const STAKING_CONTRACT = '0x00000000219ab540356cBB839Cbe05303d7705Fa'
-
 export function Balance() {
-  const { account } = useEthers()
+  const { chainId, account } = useEthers()
   const userBalance = useEtherBalance(account)
-  const stakingBalance = useEtherBalance(STAKING_CONTRACT)
+  const chainName = getChainName(chainId || ChainId.Mainnet)
+  const coinName = getCoinName(chainId || ChainId.Mainnet)
 
   return (
     <MainContent>
@@ -24,10 +23,12 @@ export function Balance() {
             <AccountButton />
           </SectionRow>
           <ContentBlock>
-            {stakingBalance && (
+            {chainId && (
               <ContentRow>
-                <Label>ETH2 staking contract holds:</Label> <TextInline>{formatEther(stakingBalance)}</TextInline>{' '}
-                <Label>ETH</Label>
+                <Label>Chain:</Label>{' '}
+                <TextInline>
+                  {chainName} [{chainId}]
+                </TextInline>
               </ContentRow>
             )}
             {account && (
@@ -37,7 +38,7 @@ export function Balance() {
             )}
             {userBalance && (
               <ContentRow>
-                <Label>Ether balance:</Label> <TextInline>{formatEther(userBalance)}</TextInline> <Label>ETH</Label>
+                <Label>Balance:</Label> <TextInline>{formatEther(userBalance)}</TextInline> <Label>{coinName}</Label>
               </ContentRow>
             )}
           </ContentBlock>

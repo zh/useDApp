@@ -6,9 +6,12 @@ import styled from 'styled-components'
 import { Colors } from '../../global/styles'
 import { TextBold } from '../../typography/Text'
 import { TokenIcon } from './TokenIcon'
+import LocalTokenList from '../../../tokenlist.json'
 
-function getTokenList(chainId?: ChainId) {
-  return uniswapToken.tokens.filter((token) => token.chainId == chainId)
+function getTokenList(chainId?: ChainId, localList = false) {
+  const tokenList = localList ? LocalTokenList : uniswapToken
+  console.log('list: ', tokenList)
+  return tokenList.tokens.filter((token) => token.chainId == chainId)
 }
 
 function useTokensBalance(tokenList: any[], account?: string | null) {
@@ -24,9 +27,13 @@ function useTokensBalance(tokenList: any[], account?: string | null) {
   )
 }
 
-export function TokensList() {
+interface TokenListProps {
+  localList?: boolean
+}
+
+export function TokensList({ localList = false }: TokenListProps) {
   const { chainId, account } = useEthers()
-  const tokenList = getTokenList(chainId)
+  const tokenList = getTokenList(chainId, localList)
   const balances = useTokensBalance(tokenList, account)
 
   return (

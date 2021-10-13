@@ -16,7 +16,7 @@ export function Tokens() {
             <AccountButton />
           </SectionRow>
           <TokensContentBlock>
-            <TokensList />
+            <TokensList localList={true} />
           </TokensContentBlock>
         </Section>
       </Container>

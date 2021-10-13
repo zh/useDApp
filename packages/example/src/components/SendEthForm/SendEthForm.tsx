@@ -5,9 +5,8 @@ import { ContentBlock } from '../base/base'
 import { TextBold } from '../../typography/Text'
 import { Colors, BorderRad, Transitions } from '../../global/styles'
 import styled from 'styled-components'
-import { useEtherBalance, useEthers } from '@usedapp/core'
+import { ChainId, getCoinName, useEtherBalance, useEthers, useSendTransaction } from '@usedapp/core'
 import { Button } from '../base/Button'
-import { useSendTransaction } from '@usedapp/core'
 import { utils } from 'ethers'
 import { StatusAnimation } from '../Transactions/TransactionForm'
 
@@ -20,7 +19,8 @@ const formatBalance = (balance: BigNumber | undefined) =>
   formatter.format(parseFloat(formatEther(balance ?? BigNumber.from('0'))))
 
 const InputComponent = () => {
-  const { account } = useEthers()
+  const { chainId, account } = useEthers()
+  const coinName = getCoinName(chainId || ChainId.Mainnet)
 
   const [amount, setAmount] = useState('0')
   const [address, setAddress] = useState('')
@@ -53,7 +53,7 @@ const InputComponent = () => {
           min="0"
           disabled={disabled}
         />
-        <FormTicker>ETH to:</FormTicker>
+        <FormTicker>{coinName} to:</FormTicker>
         <AddressInput
           id={`AddressInput`}
           type="text"
@@ -71,13 +71,17 @@ const InputComponent = () => {
 }
 
 export const SendEthForm = () => {
-  const { account } = useEthers()
+  const { chainId, account } = useEthers()
   const balance = useEtherBalance(account)
+  const coinName = getCoinName(chainId || ChainId.Mainnet)
+
   return (
     <ContentBlock style={{ padding: 0 }}>
       <TitleRow>
         <CellTitle>Send transaction</CellTitle>
-        <BalanceWrapper>Your ETH balance: {formatBalance(balance)}</BalanceWrapper>
+        <BalanceWrapper>
+          Your {coinName} balance: {formatBalance(balance)}
+        </BalanceWrapper>
       </TitleRow>
       <LabelRow>
         <Label style={{ marginLeft: '58px' }} htmlFor={'EthInput'}>

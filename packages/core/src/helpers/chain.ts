@@ -1,4 +1,4 @@
-import { ChainId, CHAIN_NAMES, LOCAL_CHAINS, TEST_CHAINS } from '../constants'
+import { ChainId, CHAIN_NAMES, LOCAL_CHAINS, TEST_CHAINS, COIN_NAMES } from '../constants'
 
 function etherscanNetworkPrefix(chainId: ChainId) {
   switch (chainId) {
@@ -38,10 +38,26 @@ export function getExplorerAddressLink(address: string, chainId: ChainId) {
       return `https://explorer.harmony.one/address/${address}`
     case ChainId.Moonriver:
       return `https://blockscout.moonriver.moonbeam.network/address/${address}/transactions`
+    case ChainId.Moonbase:
+      return `https://moonbase-blockscout.testnet.moonbeam.network/address/${address}/transactions`
     case ChainId.Palm:
       return `https://explorer.palm.io/address/${address}`
     case ChainId.Fantom:
       return `https://ftmscan.com/address/${address}`
+    case ChainId.FantomTestnet:
+      return `https://testnet.ftmscan.com/address/${address}`
+    case ChainId.SmartBchTestnet:
+      return `https://smartscan.cash/address/${address}`
+    case ChainId.SmartBchMainnet:
+      return `https://smartscan.cash/address/${address}`
+    case ChainId.AvalancheFuji:
+      return `https://cchain.explorer.avax-test.network/address/${address}/transactions`
+    case ChainId.AvalancheMainnet:
+      return `https://cchain.explorer.avax.network/address/${address}/transactions`
+    case ChainId.TomoTestnet:
+      return `https://scan.testnet.tomochain.com/address/${address}`
+    case ChainId.TomoMainnet:
+      return `https://scan.tomochain.com/address/${address}`
   }
 }
 
@@ -89,3 +105,8 @@ export function isTestChain(chainId: ChainId) {
 export function isLocalChain(chainId: ChainId) {
   return LOCAL_CHAINS.includes(chainId)
 }
+
+export function getCoinName(chainId: ChainId) {
+  return COIN_NAMES[chainId]
+}
+

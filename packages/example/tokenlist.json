@@ -1,0 +1,113 @@
+{
+  "name": "Testnets Tokens List",
+  "timestamp": "2021-10-12T13:03:43.815Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 1
+  },
+  "tags": {},
+  "logoURI": "https://example.com/",
+  "keywords": [
+    "erc20",
+    "testnet"
+  ],
+  "tokens": [
+    {
+      "name": "Scaffold Token",
+      "address": "0x56b34873b6a4e73715026607eD70B49A94d9846c",
+      "symbol": "SCF",
+      "decimals": 18,
+      "chainId": 89,
+      "logoURI": "https://zh.thedev.id/sep20tokens/assets/scaffold.png"
+    },
+    {
+      "name": "Your Token",
+      "address": "0x81d26A4b6fF6718A6782B5b7a36699E9409AE733",
+      "symbol": "YTK",
+      "decimals": 18,
+      "chainId": 89,
+      "logoURI": "https://via.placeholder.com/32.png?text=YTK"
+    },
+    {
+      "name": "Scaffold Token",
+      "address": "0x4445a79a55e5a1eeDa9258abfFEdD893c0b323F2",
+      "symbol": "SCF",
+      "decimals": 18,
+      "chainId": 1287,
+      "logoURI": "https://zh.thedev.id/sep20tokens/assets/scaffold.png"
+    },
+    {
+      "name": "AMM Token",
+      "address": "0xBbB60693031319066E5c694aa6B28dd85F7c794c",
+      "symbol": "AMM",
+      "decimals": 18,
+      "chainId": 4002,
+      "logoURI": "https://zh.thedev.id/sep20tokens/assets/scales.png"
+    },
+    {
+      "name": "Scaffold Token",
+      "address": "0x10C12B6a88CFfb0d90DaBf0324E2e7df4b695031",
+      "symbol": "SCF",
+      "decimals": 18,
+      "chainId": 4002,
+      "logoURI": "https://zh.thedev.id/sep20tokens/assets/scaffold.png"
+    },
+    {
+      "name": "AMM Token",
+      "address": "0x9E06bF2B60f42e5bA8E0c9BDfB2242924d09fD78",
+      "symbol": "AMM",
+      "decimals": 18,
+      "chainId": 10001,
+      "logoURI": "https://zh.thedev.id/sep20tokens/assets/scales.png"
+    },
+    {
+      "name": "Art Token",
+      "address": "0x2618B5927957969B346E60694e77213923eb11e5",
+      "symbol": "ART",
+      "decimals": 18,
+      "chainId": 10001,
+      "logoURI": "https://ipfs.io/ipfs/QmZx3XHnkYmaEGrpMgvzRjUcKXnmvNdqpYz9h9ySTwFDGm"
+    },
+    {
+      "name": "Scaffold Token",
+      "address": "0x4cA751A20FE9b130c0fa598DA21348B20108f51a",
+      "symbol": "SCF",
+      "decimals": 18,
+      "chainId": 10001,
+      "logoURI": "https://zh.thedev.id/sep20tokens/assets/scaffold.png"
+    },
+    {
+      "name": "AMM Token",
+      "address": "0x70296B6046fee69A1dc7475E69Ec361bEe3bfad5",
+      "symbol": "AMM",
+      "decimals": 18,
+      "chainId": 43113,
+      "logoURI": "https://zh.thedev.id/sep20tokens/assets/scales.png"
+    },
+    {
+      "name": "Scaffold Token",
+      "address": "0xd2432E8B4Ec2729De2e1Af8Df835d4D587124C2E",
+      "symbol": "SCF",
+      "decimals": 18,
+      "chainId": 43113,
+      "logoURI": "https://zh.thedev.id/sep20tokens/assets/scaffold.png"
+    },
+    {
+      "name": "Smart Token",
+      "address": "0xf76D3E946eE05e3f3420C3FeE3Baa97c0A92C5d6",
+      "symbol": "SMT",
+      "decimals": 18,
+      "chainId": 43113,
+      "logoURI": "https://via.placeholder.com/32.png?text=SMT"
+    },
+    {
+      "name": "Your Token",
+      "address": "0xEf41Aa0Df9CEeB5bcD30a8e183dB40f73cd70e54",
+      "symbol": "YTK",
+      "decimals": 18,
+      "chainId": 43113,
+      "logoURI": "https://via.placeholder.com/32.png?text=YTK"
+    }
+  ]
+}

@@ -34,7 +34,7 @@ export function TopBar() {
             </HeaderLink>
             <HeaderLink activeClassName="active-page" to="/send">
               {' '}
-              Send Ether{' '}
+              Send{' '}
             </HeaderLink>
             <HeaderLink activeClassName="active-page" to="/transactions">
               {' '}
